@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function boilWater(callback) {
+    setTimeout(() => {
+        console.log("Boiling water...");
+        callback();
+    }, 1000);
+}
+
+function brewCoffee(callback) {
+    setTimeout(() => {
+        console.log("Brewing coffee...");
+        callback();
+    }, 1000);
+}
+
+function addMilkAndSugar(callback) {
+    setTimeout(() => {
+        console.log("Adding milk and sugar...");
+        callback();
+    }, 1000);
+}
+
+function serveCoffee(callback) {
+    setTimeout(() => {
+        console.log("Serving coffee...");
+        callback();
+    }, 1000);
+}
+
+// Using nested callbacks to make coffee step-by-step
+boilWater(() => {
+    brewCoffee(() => {
+        addMilkAndSugar(() => {
+            serveCoffee(() => {
+                console.log("Coffee is ready to enjoy!");
+            });
+        });
+    });
+});
+
+
+function brushTeeth(callback) {
+    setTimeout(() => {
+        console.log("Brushing teeth...");
+        callback();
+    }, 1000);
+}
+
+function packBag(callback) {
+    setTimeout(() => {
+        console.log("Packing school bag...");
+        callback();
+    }, 1000);
+}
+
+function putOnShoes(callback) {
+    setTimeout(() => {
+        console.log("Putting on shoes...");
+        callback();
+    }, 1000);
+}
+
+brushTeeth(() => {
+    packBag(() => {
+        putOnShoes(() => {
+            console.log("Ready for school!");
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
